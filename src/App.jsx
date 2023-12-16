@@ -12,7 +12,8 @@ function App() {
       <Header />
       <div>
         <Outlet/>
-        <Login/>
+        <Login path="/login"/>
+      
       </div>
     </div>
   )

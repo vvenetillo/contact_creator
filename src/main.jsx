@@ -1,48 +1,47 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import React, { Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Login from './components/routes/Login.jsx'
-import Navbar from './components/routes/Navbar.jsx'
-import Cadastro from './components/pages/Cadastro.jsx'
-import List from './components/pages/List.jsx'
+import Login from "./components/routes/Login.jsx";
+import Navbar from "./components/routes/Navbar.jsx";
+import Register from "./components/pages/Register.jsx";
+// import List from "./components/pages/List.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
-    children:
-      [
-        {
-          path: "login",
-          element: <Login />
-        },
-      ],
+    children: [
+      {
+        path: '/login',
+        element: <Login />,
+      },
+    ],
   },
   {
-    path: "/",
+    path: '/',
     element: <Navbar />,
-    children:
-    [
+    children: [
       {
-        path: "cadastro",
-        element: <Cadastro />,
-      },
-      {
-        path: "navbar",
+        path: '/navbar',
         element: <Navbar />,
       },
       {
-        path: "list",
-        element: <List />,
+        path: '/register',
+        element: <Register />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       }
-    ]
-  }
+    ],
+  },
 ]);
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <Suspense>
+      <RouterProvider router={router} />
+    </Suspense>
+  </React.StrictMode>)
