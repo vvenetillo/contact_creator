@@ -14,7 +14,6 @@ export default function Login() {
     e.preventDefault();
     
     if (username === 'admin' && password === 'admin') {
-      // Aqui você pode realizar a lógica de autenticação bem-sucedida, como redirecionar o usuário para outra página.
       console.log("Autenticação")
     } else {
       setErrorMessage('Credenciais inválidas');
