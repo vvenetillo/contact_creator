@@ -1,22 +1,8 @@
-import './App.css'
-import Login from './components/routes/Login'
-import Header from './components/routes/Header'
-import { Outlet } from 'react-router-dom'
-
-
+import "./App.css";
+import AppRoutes from "./routes";
 
 function App() {
-
-  return (
-    <div>
-      <Header />
-      <div>
-        <Outlet/>
-        <Login path="/login"/>
-      
-      </div>
-    </div>
-  )
+  return <AppRoutes />;
 }
 
-export default App
+export default App;
