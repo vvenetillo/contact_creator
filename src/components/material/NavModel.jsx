@@ -15,7 +15,6 @@ import MenuItem from "@mui/material/MenuItem";
 
 
 import { Link } from "react-router-dom";
-import Register from "../pages/Register";
 
 import style from "../layout/NavModel.module.css";
 
@@ -33,7 +32,6 @@ function NavModel() {
   };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-    console.log(setAnchorElUser);
   };
 
   const handleCloseNavMenu = () => {
@@ -203,7 +201,7 @@ function NavModel() {
           </Toolbar>
         </Container>
       </AppBar>
-      <Register />
+      
     </>
   );
 }

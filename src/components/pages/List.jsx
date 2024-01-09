@@ -1,9 +1,15 @@
+/* eslint-disable react/prop-types */
+import NavModel from "../material/NavModel";
+import styles from "../layout/Forms.module.css";
 
-export default function List (){
+export default function List  () {
   return (
-    <div>
-      <h1>Lista</h1>
-      
+    <>
+    <NavModel />
+    <div className={styles.list}>
+      <h2>Dados inseridos:</h2>
+     
     </div>
-  )
+    </>
+  );
 }
