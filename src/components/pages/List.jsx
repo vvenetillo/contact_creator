@@ -39,14 +39,14 @@ const HR2 = styled.hr `
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
-  const navigate = useNavigate(); // Obtenha o objeto de histórico
+  const navigate = useNavigate(); 
 
   const navigateToRegister = () => {
-    navigate('/register'); // Use o método push do histórico para navegar para '/register'
+    navigate('/register'); 
   };
 
   useEffect(() => {
-    axios.get('http://localhost:3001/users')
+    axios.get(import.meta.env.VITE_URL)
       .then(response => {
         setUsers(response.data.users);
       })
