@@ -46,7 +46,11 @@ const UserList = () => {
   };
 
   useEffect(() => {
-    axios.get(import.meta.env.VITE_URL)
+    const api = axios.create({
+      baseURL: import.meta.env.VITE_URL,
+    });
+  
+    api.get("/users")
       .then(response => {
         setUsers(response.data.users);
       })
@@ -60,12 +64,12 @@ const UserList = () => {
     <NavModel />
     <Container>
       <h2>Lista de Usuários</h2>
-      {users.map((user, index) => (
+      {users && users.map((user, index) => (
         <UserItem key={index}>
-          <strong>Username:</strong> {user.username}<br />
-          <strong>Email:</strong> {user.email}<br />
-          <strong>Telefone:</strong> {user.telefone}
-          <HR2 />
+        <strong>Username:</strong> {user.username}<br />
+        <strong>Email:</strong> {user.email}<br />
+        <strong>Telefone:</strong> {user.telefone}
+         <HR2 />
         </UserItem>
       ))}
       <SubmitButton onClick={navigateToRegister}>
