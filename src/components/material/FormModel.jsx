@@ -3,11 +3,11 @@ import { useReducer } from "react";
 import styled from "styled-components";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import('dotenv').config()
 import axios from "axios";
 
+
 const api = axios.create({
-  baseURL: import.meta.env.BASE_URL,
+  baseURL: import.meta.env.VITE_URL,
 });
 
 import photo from "../../assets/photo.svg";
