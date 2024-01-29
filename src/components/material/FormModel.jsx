@@ -119,16 +119,12 @@ export default function Login() {
     const { username, email, telefone } = state;
     const formData = { username, email, telefone };
 
-    console.log(formData);
+    
 
     try {
-      const response = 
-      await api
-      .post("/register", formData);
+      const response = await api.post("/register", formData);
 
       if (response.status === 201) {
-        console.log(response.data.msg); // Mensagem do backend
-        console.log(response.data.user); // Dados do usuário cadastrado
         dispatch({ type: "SET_SUBMITTED_DATA", payload: formData });
         dispatch({ type: "SET_SHOW_LIST", payload: true });
         dispatch({ type: "SET_USERNAME", payload: "" });
