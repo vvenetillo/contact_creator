@@ -122,9 +122,7 @@ export default function Login() {
     
 
     try {
-      const response = 
-      await api
-      .post("/register", formData);
+      const response = await api.post("/register", formData);
 
       if (response.status === 201) {
         dispatch({ type: "SET_SUBMITTED_DATA", payload: formData });

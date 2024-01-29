@@ -47,7 +47,7 @@ const UserList = () => {
 
   useEffect(() => {
     const api = axios.create({
-      baseURL: import.meta.env.VITE_URL,
+      baseURL:  import.meta.env.VITE_URL,
     });
   
     api.get("/users")
@@ -66,7 +66,7 @@ const UserList = () => {
       <h2>Lista de Usuários</h2>
       {users && users.map((user, index) => (
         <UserItem key={index}>
-        <strong>Username:</strong> {user.username}<br />
+        <strong>Username:</strong> {user.nome}<br />
         <strong>Email:</strong> {user.email}<br />
         <strong>Telefone:</strong> {user.telefone}
          <HR2 />
