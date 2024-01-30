@@ -47,13 +47,13 @@ const UserList = () => {
 
   useEffect(() => {
     const api = axios.create({
-      baseURL:  import.meta.env.VITE_URL,
+      baseURL: import.meta.env.VITE_URL
     });
   
     api.get("/users")
       .then(response => {
         setUsers(response.data.users);
-      })
+        })
       .catch(error => {
         console.error('Erro ao obter a lista de usuários:', error);
       });

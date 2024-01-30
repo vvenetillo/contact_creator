@@ -5,9 +5,10 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const VITE_URL = import.meta.env.VITE_URL
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_URL,
+  baseURL:VITE_URL
 });
 
 import photo from "../../assets/photo.svg";
@@ -119,7 +120,7 @@ export default function Login() {
     const { username, email, telefone } = state;
     const formData = { username, email, telefone };
 
-    
+    console.log(formData)
 
     try {
       const response = await api.post("/register", formData);
@@ -145,7 +146,7 @@ export default function Login() {
   return (
     <Container>
       <Image src={photo} alt="ilustration" />
-      <Form onSubmit={handleLogin}>
+      <Form onSubmit={handleLogin} action={VITE_URL}>
         <FormGroup>
           <Label>Nome Completo</Label>
           <Input
