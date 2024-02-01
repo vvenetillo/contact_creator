@@ -46,18 +46,19 @@ const UserList = () => {
   };
 
   useEffect(() => {
-    const api = axios.create({
-      baseURL: import.meta.env.VITE_URL
-    });
-  
-    api.get("/users")
-      .then(response => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${import.meta.env.VITE_URL}/users`, {
+          withCredentials: false, 
+        });
         setUsers(response.data.users);
-        })
-      .catch(error => {
+      } catch (error) {
         console.error('Erro ao obter a lista de usuários:', error);
-      });
-  }, []);
+      }
+    };
+
+    fetchData();
+  }, []); 
 
   return (
     <>
