@@ -6,10 +6,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const VITE_URL = import.meta.env.VITE_URL
+// const localhost = 'http://localhost:3001/'
 
 const api = axios.create({
-  baseURL:VITE_URL
+  baseURL: VITE_URL
 });
+console.log(api.users)
 
 import photo from "../../assets/photo.svg";
 
@@ -146,7 +148,7 @@ export default function Login() {
   return (
     <Container>
       <Image src={photo} alt="ilustration" />
-      <Form onSubmit={handleLogin} action={VITE_URL}>
+      <Form onSubmit={handleLogin}>
         <FormGroup>
           <Label>Nome Completo</Label>
           <Input
@@ -186,7 +188,7 @@ export default function Login() {
             }
           />
         </FormGroup>
-        <SubmitButton type="submit" onSubmit={handlesubmit}>
+        <SubmitButton type="submit">
           ENVIAR
         </SubmitButton>
         {state.errorMessage && (

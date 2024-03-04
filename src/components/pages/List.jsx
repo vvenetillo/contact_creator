@@ -44,11 +44,11 @@ const UserList = () => {
   const navigateToRegister = () => {
     navigate('/register'); 
   };
-
+// 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_URL}/users`, {
+        const response = await axios.get(`${import.meta.env.VITE_URL}users`, {
           withCredentials: false, 
         });
         setUsers(response.data.users);
